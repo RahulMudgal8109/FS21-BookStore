@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Book Store!</title>
+    <style>
+        .icons {
+            width: 60px;
+            height: 30px;
+            background-color: rgb(0, 81, 255);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        .sun-moon {
+
+            width: 60px;
+            height: 29px;
+            border-radius: 50px;
+            display: flex;
+            padding: 20px 5px 20px 5px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .sun-moon i {
+            font-size: 29px;
+        }
+
+        .fa-sun-o {
+            position: absolute;
+            left: 0%;
+
+        }
+
+        .fa-moon-o {
+            position: absolute;
+            right: 0%;
+
+        }
+
+        .circle {
+            position: absolute;
+            left: 0%;
+
+            width: 29px;
+            height: 29px;
+            background-color: white;
+            border-radius: 50%;
+
+
+        }
+
+        .right {
+            width: 20vw;
+        }
+
+        .custom-border {
+            border: 1px solid black;
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .leftSection {
+            height: 90vh;
+            width: 20vw;
+            overflow-y: scroll;
+        }
+
+        .rightSection {
+            width: 80vw;
+        }
+
+        li {
+            list-style-type: none;
+            font-size: 20px;
+            margin: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+
+        .listHover:hover {
+            color: rgb(141, 141, 231);
+
+        }
+
+        .listHover {
+            cursor: pointer;
+        }
+
+        .bookWithImg img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .booksSection {
+            width: 50vw;
+        }
+        .imgSection{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: start;
+            width: 50vw;
+        }
+        .bookWithImg{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            width: 32%;
+        }
+        .title{
+            margin: 20px;
+        }
+        .end
+        {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .button{
+            width: 115px;
+            height: 60px;
+            border: 2px solid blue;
+            border-radius: 50px;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button:hover{
+            background-color: blue;
+            transition: 0.6s ease-in-out;
+            color: white;
+            cursor: pointer;
+        }
+        .signUp{
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            border: 1px solid black;
+            border-radius: 30px;
+            color: white;
+        }
+        .logoutLink{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent custom-border">
+        <div class="container-fluid  d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="index.html">Books</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="right d-flex justify-content-evenly align-items-center" id="navbarSupportedContent">
+                <div class="icons">
+                    <!--  -->
+                    <div class="sun-moon" id="sunMoon">
+                        <i class="fa fa-sun-o"></i>
+                        <i class='fa fa-moon-o'></i>
+                        <span class="circle" id="circle"></span>
+                    </div>
+                </div>
+                <a href="signUp.html" id="signUpLink"><button class="signUp" id="signUpBtn">SignUp</button></a>
+                <a href="index.html" class="logoutLink" id="logoutLink"><button class="signUp" id="signUpBtn">Logout</button></a>
+            </div>
+        </div>
+    </nav>
+    <div class="mainSection d-flex">
+        <div class="leftSection">
+            <h4 class="d-flex justify-content-center align-items-center">All Categories</h4>
+            <ul id="leftCategories">
+                <!-- <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li>
+                <li>HrdCover Fiction</li> -->
+            </ul>
+
+        </div>
+        <div class="rightSection d-flex flex-column  align-items-center">
+            <h1 class="d-flex justify-content-center align-items-center">Best Seller Books</h1>
+            <div class="booksSection" id="booksSection">
+                <!-- <div class="book">
+                    <div class="title">
+                        <h4>Advice How-To and Miscellaneous</h4>
+                    </div>
+                    <div class="imgSection">
+                        <div class="bookWithImg d-flex flex-column  align-items-center">
+                            <img src="images/book1.jpg" />
+                            <h5 id="bookName" class="bookName">ATOMIC HABITS</h5>
+                            <h6>James</h6>
+                        </div>
+                        <div class="bookWithImg d-flex flex-column  align-items-center">
+                            <img src="images/book1.jpg" />
+                            <h5 id="bookName" class="bookName">ATOMIC HABITS</h5>
+                            <h6>James</h6>
+                        </div>
+                        <div class="bookWithImg d-flex flex-column  align-items-center">
+                            <img src="images/book1.jpg" />
+                            <h5 id="bookName" class="bookName">ATOMIC HABITS</h5>
+                            <h6>James</h6>
+                        </div>
+                    </div>
+                    <div class="end">
+                        <div class="button" id="seeMore">
+                            <h6>See More</h6>
+                        </div>
+                    </div> -->
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="script.js"></script>
+    <script>
+         let box=document.getElementById("sunMoon")
+        let circle=document.getElementById("circle");
+        let title=document.getElementById("title");
+        console.log(circle);
+        let flag=true;
+        box.addEventListener("click",function()
+        {
+            
+            if(flag)
+            {
+                flag=false;
+                circle.style.transform = "translateX(33px)"
+                circle.style.transition = "0.5s ease-in-out"
+                document.body.style.backgroundColor="black";
+                document.body.style.color="white";
+                title.style.color="white";
+
+            }
+            else{
+                flag=true;
+                circle.style.transform = "translateX(0px)"
+                circle.style.transition = "0.5s ease-in-out"
+                document.body.style.backgroundColor="white";
+                document.body.style.color="black";
+                title.style.color="black";
+
+            }
+            
+            
+        })
+    </script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
